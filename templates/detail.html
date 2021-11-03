@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='{{ url_for("static", filename="css/common.css") }}' rel="stylesheet">
+    <title>전시 상세페이지</title>
+
+    <script>
+         let exhibit= '{{ exhibitlist }}'
+         function showStar() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/detail?idx=샘플데이터',
+                    data: {},
+                    success: function (response) {
+                        let exhibition = response['all_exhibit']
+                        for (let i = 0; i <exhibition.length; i++) {
+                            let title = exhibition[i]['title']
+                            let image = exhibition[i]['img_url']
+                            let recent = exhibition[i]['recent']
+                            let url = exhibition[i]['url']
+                            let like = exhibition[i]['like']
+                                let num = i;
+                            let temp_html = `
+                                <li><a onclick="javascript:${url}"><img src="${image}">${num}:${title}</a></li>
+                            `
+                            $('.all_exhibit').append(temp_html)
+                        }
+                    }
+                });
+            }
+    </script>
+</head>
+<body>
+
+<a onclick="window.location.href='/'">detail.html </a>
+
+<header>
+            <nav class="content_area">
+                <h1>Logo</h1>
+                <ul class="nav_list">
+                    <li><a href="/login.html">로그인</a></li>
+                    <li><a href="/register.html">회원가입</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--body-->
+        <body>
+
+            <section class="endSoon_wrap">
+                <div class="content_area endSoon">
+                    <ul class="endSoon_list bxslider">
+
+
+
+                    </ul>
+                </div>
+            </section>
+            <section class="all_exhibit_wrap">
+                <div class="content_area">
+                    <ul class="all_exhibit">
+
+                        {% for exhibition in exhibitions %}
+                            <li><a href="{{ url_for('detail',idx=loop.index) }}"><img src="{{exhibition.img_url}}">{{ loop.index }}: {{exhibition.title}}</a></li>
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+        </body>
+        <!--footer-->
+        <footer>
+
+        </footer>
+
+</body>
+</html>

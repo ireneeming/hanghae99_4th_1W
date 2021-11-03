@@ -1,0 +1,72 @@
+ /*css reset*/
+            html, body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed,
+            figure, figcaption, footer, header, hgroup,
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            /* HTML5 display-role reset for older browsers */
+            article, aside, details, figcaption, figure,
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+            body {
+                line-height: 1;
+            }
+            ol, ul {
+                list-style: none;
+            }
+            blockquote, q {
+                quotes: none;
+            }
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            a, a:hover, a:visited {text-decoration: none;color:inherit;}
+
+
+            /*content area*/
+            .content_area {width:980px; margin:0 auto; }
+
+             /*main*/
+             header{position:relative; width:100%; height:80px; background:rgba(187, 187, 187, 0.233); z-index:9999;color:#fff;}
+             header nav {height:80px; display:flex; justify-content: space-between; align-items: center;}
+             header nav .nav_list{ display:flex; justify-content: flex-end; }
+             header nav .nav_list li{display:inline-block; margin-left:20px; }
+
+            .main_wrap {position:relative; width:100%;}
+            .main_wrap .main {width:100%; height:500px; background:#123456;}
+
+            .endSoon_wrap {width:100%; height:auto;}
+            .endSoon_wrap .endSoon {border:1px solid #bbb; padding:80px 0; }
+            .endSoon_wrap .endSoon .endSoon_list {width:auto; overflow:hidden;display:flex; }
+            .endSoon_wrap .endSoon .endSoon_list li {width: 198px!important; height:250px; margin-right:20px; background:#eee; }
+
+            .bx-wrapper {border:0; margin-bottom:0; box-shadow: none;}
+            .bx-wrapper img {width:100%;}
+
+            .all_exhibit_wrap {position:relative;width:100%; height:500px; }
+            .all_exhibit_wrap .all_exhibit{display:flex; justify-content: flex-start;flex-wrap:wrap;}
+            .all_exhibit_wrap .all_exhibit li{width:24%; height:auto; margin-right:1%;margin-bottom:10px; background:#eee; }
+            .all_exhibit_wrap .all_exhibit li img{width:100%; }
+            .all_exhibit_wrap .all_exhibit li:(4n+1){margin-right:0;}
